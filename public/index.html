@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Acceso seguro al sistema Rehab ZSC — Plataforma de rehabilitación hospitalaria">
+  <title>Rehab ZSC — Acceso al sistema</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+  <div class="login-page">
+    <!-- Panel visual -->
+    <aside class="login-visual" aria-hidden="true">
+      <div class="visual-overlay"></div>
+      <img
+        src="images/rehabilitation.jpg"
+        alt="Sesión de rehabilitación física en entorno clínico"
+        class="visual-image"
+      >
+      <div class="visual-content">
+        <div class="visual-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          Acceso seguro
+        </div>
+        <blockquote class="visual-quote">
+          <p>«La recuperación es un camino. Nosotros le acompañamos en cada paso.»</p>
+        </blockquote>
+        <p class="visual-credit">
+          Imagen: <a href="https://unsplash.com/photos/woman-in-black-tank-top-and-black-shorts-doing-push-up-on-green-grass-field-during-daytime-1571019614242" target="_blank" rel="noopener">Unsplash</a>
+        </p>
+      </div>
+    </aside>
+
+    <!-- Panel de login -->
+    <main class="login-panel">
+      <div class="login-container">
+        <header class="login-header">
+          <div class="brand-logo" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="48" height="48" rx="12" fill="currentColor" opacity="0.12"/>
+              <path d="M24 10v28M10 24h28" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2" opacity="0.4"/>
+            </svg>
+          </div>
+          <h1>Rehab ZSC</h1>
+          <p class="login-subtitle">Sistema de gestión de rehabilitación hospitalaria</p>
+        </header>
+
+        <form id="loginForm" class="login-form" novalidate>
+          <div id="alertBox" class="alert" role="alert" hidden></div>
+
+          <div class="form-group">
+            <label for="username">Usuario</label>
+            <div class="input-wrapper">
+              <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Introduzca su usuario"
+                autocomplete="username"
+                required
+                autofocus
+              >
+            </div>
+            <span class="field-error" id="usernameError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Contraseña</label>
+            <div class="input-wrapper">
+              <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Introduzca su contraseña"
+                autocomplete="current-password"
+                required
+              >
+              <button type="button" class="toggle-password" id="togglePassword" aria-label="Mostrar contraseña">
+                <svg class="icon-show" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+                <svg class="icon-hide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" hidden>
+                  <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/>
+                  <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/>
+                  <line x1="1" y1="1" x2="23" y2="23"/>
+                </svg>
+              </button>
+            </div>
+            <span class="field-error" id="passwordError"></span>
+          </div>
+
+          <button type="submit" class="btn-primary" id="submitBtn">
+            <span class="btn-text">Continuar</span>
+            <span class="btn-spinner" hidden>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+              </svg>
+            </span>
+          </button>
+        </form>
+
+        <footer class="login-footer">
+          <div class="security-note">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            <span>Conexión cifrada · Datos protegidos conforme a normativa sanitaria</span>
+          </div>
+          <p class="copyright">&copy; 2026 Rehab ZSC. Todos los derechos reservados.</p>
+        </footer>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rehab ZSC — Panel principal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --color-primary: #0d7377; --color-text: #1a365d; --color-bg: #f0f7fa; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: var(--color-bg); color: var(--color-text); min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+    .card { background: #fff; border-radius: 12px; padding: 2.5rem; box-shadow: 0 4px 20px rgba(26,54,93,.12); text-align: center; max-width: 420px; }
+    h1 { font-size: 1.5rem; margin-bottom: .5rem; }
+    p { color: #5a7184; margin-bottom: 1.5rem; }
+    a { color: var(--color-primary); text-decoration: none; font-weight: 600; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Bienvenido a Rehab ZSC</h1>
+    <p id="welcomeMsg">Ha iniciado sesión correctamente.</p>
+    <a href="index.html" id="logoutLink">Cerrar sesión</a>
+  </div>
+  <script>
+    const user = JSON.parse(sessionStorage.getItem('rehabZsc_user') || 'null');
+    if (!user) {
+      window.location.href = 'index.html';
+    } else {
+      document.getElementById('welcomeMsg').textContent =
+        `Sesión activa como ${user.nombre || user.username}.`;
+    }
+    document.getElementById('logoutLink').addEventListener('click', () => {
+      sessionStorage.removeItem('rehabZsc_user');
+    });
+  </script>
+</body>
+</html>
