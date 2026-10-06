@@ -10,6 +10,7 @@ El único chat de agente de Cursor ligado a esa carpeta es:
 Hay copias del mismo chat en `rehabZsc-webasica` y en un workspace de Windows; el contenido es el mismo hilo.
 También hay una sesión muy corta de Claude Code (`login`) en `~/.claude/projects/-home-miguel-tfm-rehabZsc/`.
 
+REVISAR
 ---
 
 ## Usuario 1
